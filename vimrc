@@ -2,5 +2,5 @@
 set ignorecase
 set smartcase
 
-" Line number
+" Line numbers
 set number
