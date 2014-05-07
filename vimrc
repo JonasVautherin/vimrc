@@ -8,8 +8,10 @@ call vundle#rc()
 " Let Vundle manage Vundle (required)
 Plugin 'gmarik/Vundle.vim'
 
-Bundle 'Rip-Rip/clang_complete'
 Bundle 'kien/ctrlp.vim'
+Bundle 'Rip-Rip/clang_complete'
+Bundle 'vim-scripts/a.vim'
+Bundle 'vim-scripts/ag.vim'
 
 syntax on
 filetype plugin on
@@ -17,6 +19,7 @@ filetype indent on
 
 " For clang_complete
 let g:clang_library_path='/usr/lib/llvm-3.4/lib/'
+let g:clang_set_library=1 " Allows to cache includes in memory and makes the completion much faster
 
 " Doxygen syntax
 let g:load_doxygen_syntax=1
