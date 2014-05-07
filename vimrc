@@ -31,7 +31,7 @@ set smartcase
 " Line numbers
 set number
 
-" Keep more line of context
+" Keep more lines of context
 set scrolloff=3
 
 " Tab management
