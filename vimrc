@@ -9,6 +9,7 @@ call vundle#rc()
 Plugin 'gmarik/Vundle.vim'
 
 Bundle 'kien/ctrlp.vim'
+Bundle 'michalbachowski/vim-wombat256mod'
 Bundle 'Rip-Rip/clang_complete'
 Bundle 'vim-scripts/a.vim'
 Bundle 'vim-scripts/ag.vim'
@@ -16,6 +17,10 @@ Bundle 'vim-scripts/ag.vim'
 syntax on
 filetype plugin on
 filetype indent on
+
+" Colorscheme
+" Use with a 256 terminal ('set term?' to check, 'set term=xterm-256color' to set)
+colorscheme wombat256mod
 
 " For clang_complete
 let g:clang_library_path='/usr/lib/llvm-3.4/lib/'
