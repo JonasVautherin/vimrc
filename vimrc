@@ -8,11 +8,21 @@ call neobundle#begin(expand('~/.vim/bundle/'))
 " Let NeoBundle manage NeoBundle (Required)
 NeoBundleFetch 'Shougo/neobundle.vim'
 
-NeoBundle 'kien/ctrlp.vim'
 NeoBundle 'michalbachowski/vim-wombat256mod'
 NeoBundle 'Rip-Rip/clang_complete'
 NeoBundle 'vim-scripts/a.vim'
 NeoBundle 'vim-scripts/ag.vim'
+NeoBundle 'Shougo/unite.vim'
+NeoBundle 'Shougo/vimfiler.vim'
+
+NeoBundle 'Shougo/vimproc', {
+      \ 'build' : {
+      \     'windows' : 'make -f make_mingw32.mak',
+      \     'cygwin' : 'make -f make_cygwin.mak',
+      \     'mac' : 'make -f make_mac.mak',
+      \     'unix' : 'make -f make_unix.mak',
+      \    },
+      \ }
 
 call neobundle#end()
 
