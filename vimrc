@@ -39,6 +39,9 @@ set number
 " Keep more lines of context
 set scrolloff=3
 
+" Highlight search results
+set hlsearch
+
 " Tab management
 nmap H gT
 nmap L gt
