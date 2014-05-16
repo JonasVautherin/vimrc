@@ -42,6 +42,9 @@ set scrolloff=3
 " Highlight search results
 set hlsearch
 
+" <Ctrl-l> redraws the screen and removes any search highlighting.
+nnoremap <silent> <C-l> :nohl<CR><C-l>
+
 " Tab management
 nmap H gT
 nmap L gt
