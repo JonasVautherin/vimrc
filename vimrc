@@ -1,18 +1,20 @@
 set nocompatible
 filetype off
 
-" Set the runtime path to include Vundle and initialize
-set runtimepath+=~/.vim/bundle/Vundle.vim
-call vundle#rc()
+" Set the runtime path to include NeoBundle and initialize (Required)
+set runtimepath+=~/.vim/bundle/neobundle.vim
+call neobundle#begin(expand('~/.vim/bundle/'))
 
-" Let Vundle manage Vundle (required)
-Plugin 'gmarik/Vundle.vim'
+" Let NeoBundle manage NeoBundle (Required)
+NeoBundleFetch 'Shougo/neobundle.vim'
 
-Bundle 'kien/ctrlp.vim'
-Bundle 'michalbachowski/vim-wombat256mod'
-Bundle 'Rip-Rip/clang_complete'
-Bundle 'vim-scripts/a.vim'
-Bundle 'vim-scripts/ag.vim'
+NeoBundle 'kien/ctrlp.vim'
+NeoBundle 'michalbachowski/vim-wombat256mod'
+NeoBundle 'Rip-Rip/clang_complete'
+NeoBundle 'vim-scripts/a.vim'
+NeoBundle 'vim-scripts/ag.vim'
+
+call neobundle#end()
 
 syntax on
 filetype plugin on
@@ -20,7 +22,11 @@ filetype indent on
 
 " Colorscheme
 " Use with a 256 terminal ('set term?' to check, 'set term=xterm-256color' to set)
-colorscheme wombat256mod
+try
+        colorscheme wombat256mod
+catch /^Vim\%((\a\+)\)\=:E185/
+        " deal with it
+endtry
 
 " For clang_complete
 let g:clang_library_path='/usr/lib/llvm-3.4/lib/'
@@ -74,3 +80,5 @@ endfunction
 if filereadable(glob("~/.vimrc.local"))
         source ~/.vimrc.local
 endif
+
+NeoBundleCheck
